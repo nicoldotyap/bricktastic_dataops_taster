@@ -1,7 +1,7 @@
 # Bricktastic DataOps Taster 🧱
 
 Welcome! Today you'll get a hands-on taste of two of the most exciting careers in tech:
-**Data Science** and **Data Engineering** — using real LEGO data.
+**Data Science** and **Data Engineering** — using som play data.
 
 ---
 
