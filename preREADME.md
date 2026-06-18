@@ -1,11 +1,14 @@
 # Work Experience Prerequisites
 ## 2-Day Data Science & Data Engineering Taster 🧱
 
-To take part in the **Bricktastic DataOps Taster** experience, students need to have the following ready **before Day 1**.
+To take part in the **Bricktastic DataOps Taster** experience, candidates should have the following ready **before arrival*.
 
 ---
 
 ## Checklist
+
+### An email address
+Required for GitHub and Kaggle sign-ups.Use an email you plan to keep long‑term, because your GitHub account will become the place where you build your coding and data portfolio over time
 
 ### A laptop that can access VS Code Web
 Must be able to open **https://vscode.dev** in a modern browser (Chrome or Edge recommended).
@@ -17,7 +20,7 @@ Students will be granted read access to clone the starter repository:
 
 Sign up at: https://github.com/signup
 
-> Use a school-safe email address when registering.
+> Have a working email for registering.
 
 ### A Kaggle account
 Needed to access the dataset used in the project.
@@ -25,9 +28,6 @@ Needed to access the dataset used in the project.
 Sign up at: https://www.kaggle.com
 
 > Use the same email as your GitHub account to keep things simple.
-
-### A school-safe email address
-Required for GitHub and Kaggle sign-ups. A school email works best.
 
 ### Basic digital literacy
 You should be comfortable with:
