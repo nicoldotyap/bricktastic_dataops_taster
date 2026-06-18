@@ -37,8 +37,8 @@ You should be comfortable with:
 
 > No prior coding or data experience required — we'll teach you everything on the day.
 
-### School network access to GitHub and Kaggle
-Please check with your IT department that these sites are **not blocked** on school Wi-Fi before arriving:
+### Access to GitHub and Kaggle onsite
+Check that you can access the following sites
 - https://github.com
 - https://kaggle.com
 - https://vscode.dev
