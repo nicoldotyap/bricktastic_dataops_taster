@@ -1,0 +1,217 @@
+set_num,name,year,theme_id,num_parts
+001-1,Gears,1965,1,43
+0011-2,Town Mini-Figures,1979,67,12
+0011-3,Castle Mini-Figures,1979,67,12
+0012-1,Space Mini-Figures,1979,67,12
+0013-1,Space Mini-Figures,1979,67,12
+1-1,Weetabix Promotional Legoland Set,1976,1,43
+10-1,Roof Tiles,1976,1,6
+10-4,Mosaic,1976,1,6
+100-1,Brick Box,1980,1,100
+1000-1,Lego Cardboard Mosaic,1981,1,1
+1001-1,Mosaic,1981,1,1
+1002-1,Mosaic,1981,1,1
+1003-1,Mosaic,1981,1,1
+1004-1,Mosaic,1981,1,1
+1005-1,Mosaic,1981,1,1
+10000-1,Millennium Falcon,2000,18,793
+10001-1,Santa Fe Super Chief,2001,9,672
+10002-1,Large Lego Brick,2002,1,1
+10003-1,Star Wars Trilogy,2002,18,898
+10004-1,Classic Town,2002,67,1
+10005-1,Black Falcon'S Fortress,2002,8,692
+10006-1,Darth Vader,2002,18,600
+10007-1,Black Knight'S Castle,2002,8,712
+10008-1,Darth Vader,2003,18,834
+10009-1,Lego Factory,2003,1,1
+10010-1,Skeleton Tower,2003,8,445
+10011-1,Technic Motorised Excavator,2003,3,1180
+10012-1,Super Star Destroyer,2003,18,3104
+10013-1,Open-Ended Basic Bucket,2004,1,200
+10014-1,Crane Truck,2004,4,296
+10015-1,Motorised Bulldozer,2004,3,1384
+10016-1,Technic Tow Truck,2004,3,1096
+10017-1,Castle Giant Chess Set,2004,8,1454
+10018-1,Darth Maul,2001,18,1868
+10019-1,Rebel Blockade Runner,2001,18,1748
+10020-1,Santa Fe Super Chief,2002,9,724
+10021-1,U.S.S. Nimitz,2002,9,1418
+10022-1,Santa Fe Super Chief,2002,9,1500
+10023-1,Statue Of Liberty,2000,9,2882
+10024-1,Red Baron,2000,9,294
+10025-1,Santa Fe Cars Set,2003,9,866
+10026-1,Naboo Starfighter,2002,18,187
+10027-1,Train Engine,2003,9,696
+10028-1,Lego Logo,2003,1,1
+10029-1,Lunar Lander,2003,9,369
+10030-1,Imperial Star Destroyer,2002,18,3104
+10031-1,Technic Supercar,2004,3,1368
+10032-1,City Train And Station,2004,9,849
+10033-1,Train Set With Motor,2004,9,821
+10034-1,Dino Head Attack,2005,9,592
+10035-1,Cargo Crane,2005,9,744
+10036-1,Fire Station,2006,67,684
+10037-1,Camp Lego,2002,67,1
+10038-1,Blacktron Ii,2002,67,1
+10039-1,Black Seas Barracuda,2002,67,1
+10040-1,Black Knight'S Castle,2002,67,1
+10041-1,Castle,2002,67,1
+10042-1,Legoland,2002,67,1
+10043-1,Creative Studios,2004,1,1
+10044-1,Yellow City People,2004,67,6
+10045-1,City Bus,2004,67,1
+10046-1,Brick Box,2004,1,200
+10047-1,Stars Of The Silver Screen,2004,18,1
+10048-1,Jango Fett,2003,18,659
+10049-1,Tow Truck,2004,4,296
+10050-1,Imperial Star Destroyer Collectors Set,2002,18,1
+10051-1,Super Star Destroyer,2003,18,1
+10052-1,At-At Walker,2003,18,1
+10053-1,Death Star Ii,2005,18,3441
+10054-1,Technic Model Set,2004,3,1
+10055-1,At-St Walker,2004,18,422
+10056-1,Ewok Attack,2004,18,241
+10057-1,Jedi Duel,2005,18,243
+10058-1,Technic Bulldozer,2005,3,1384
+10059-1,Battle Of Hoth,2006,18,730
+10060-1,Leonardo Da Vinci,2006,9,485
+10061-1,Anakin'S Podracer,2006,18,192
+10062-1,Flying Dutchman,2006,9,0
+10063-1,Technic Supercar,2006,3,1281
+10064-1,Motorized Excavator,2006,3,1180
+10065-1,Motorized Crane Truck,2006,3,1092
+10066-1,Academy X-Wing Fighter,2006,18,192
+10067-1,Technic Ultimate Motors Set,2006,3,1
+10068-1,Mindstorms Accessories Set,2006,48,1
+10069-1,Creative Building Set,2006,1,405
+10070-1,Creative Building Tower,2006,1,270
+10071-1,Police Sets,2006,67,1
+10072-1,Mobile Police Station,2006,67,1
+10073-1,Attack On Weathertop,2006,38,228
+10074-1,Gollum'S Hideout,2006,38,99
+10075-1,Shelob Attacks,2006,38,202
+10076-1,Helm'S Deep,2006,38,858
+10077-1,The Battle Of Helm'S Deep,2006,38,1
+10078-1,Pirate Ship,2007,67,1
+10079-1,Sonic Transport,2007,67,1
+10080-1,Mindstorms Remote Control,2007,48,1
+10081-1,Technic Bionicle,2007,67,1
+10082-1,Fire Rescue,2007,67,1
+10083-1,Race Buggy,2007,67,1
+10084-1,"Basic Building Set, 3+",2007,1,60
+10085-1,Battle Droid,2007,18,100
+10086-1,Clone Turbo Tank,2007,18,800
+10087-1,Santa'S Workshop,2007,67,0
+10088-1,Creative Building Bucket,2007,1,80
+10089-1,Technic Champion,2007,3,1
+10090-1,Scorpion Palace,2007,25,844
+10091-1,Tantive Iv,2007,18,1408
+10092-1,Death Star Ii,2007,18,3441
+10093-1,Fountain,2007,67,1
+10094-1,Technic Car,2008,3,1
+10095-1,City Advent Calendar,2008,67,318
+10096-1,Nba Collectors #1,2003,9,0
+10097-1,Batman Cowl,2008,67,1
+10098-1,Grand Carousel,2009,67,3263
+10099-1,Ice Planet 2002,2009,67,0
+10100-1,Brick Separator,2000,1,1
+10101-1,Christmas Set,2001,67,1
+10102-1,Lego Studios,2001,67,1
+10103-1,Tower Bridge,2010,9,4287
+10104-1,City Square,2010,67,2456
+10105-1,Classic Town Square,2010,67,1
+10106-1,Imperial Star Destroyer,2010,18,3104
+10107-1,Saturn V,2017,9,1969
+10108-1,The Empire Strikes Back,2007,18,1
+10109-1,Open-Ended Basic Bucket,2010,1,200
+10110-1,Emmet'S House,2014,29,357
+10111-1,City Centre,2000,67,1
+10112-1,Imperial At-St,2001,18,422
+10113-1,Brick Box,2000,1,100
+10114-1,Checkpoint,2001,67,1
+10115-1,Basic Set,2000,1,116
+10116-1,Mindstorms Expansion Set,2000,48,1
+10117-1,Technic Set,2000,3,1
+10118-1,Lego Dacta,2000,17,1
+10119-1,City Train Station,2003,9,696
+10120-1,Rebel Blockade Runner,2001,18,1748
+10121-1,Super Star Destroyer,2002,18,3104
+10122-1,Mos Eisley Cantina,2003,18,193
+10123-1,Cloud City,2003,18,698
+10124-1,Wright Flyer,2003,9,585
+10125-1,Luke Skywalker'S Landspeeder,2004,18,393
+10126-1,Ewok Village,2013,18,1990
+10127-1,Imperial Star Destroyer,2001,18,3104
+10128-1,Pirate Ship,2001,67,1
+10129-1,Rebel Snowspeeder,2003,18,1457
+10130-1,Millennium Falcon,2002,18,5195
+10131-1,Tie Fighter Collection,2004,18,703
+10132-1,Motorized Hogwarts Express,2004,45,708
+10133-1,Basketball,2004,9,1
+10134-1,Y-Wing Attack Starfighter,2004,18,1473
+10135-1,Technic Power Functions,2005,3,1
+10136-1,Super Star Destroyer,2005,18,3104
+10137-1,Bionicle Set,2005,67,1
+10138-1,R2-D2 And C-3Po,2002,18,659
+10139-1,Ewok Attack,2002,18,241
+10140-1,Ultimate Collector'S Millennium Falcon,2007,18,5195
+10141-1,Trade Federation Mtt,2004,18,769
+10142-1,Hogwarts Express,2004,45,708
+10143-1,Death Star Ii,2005,18,3441
+10144-1,Sandcrawler,2005,18,1669
+10145-1,Motorized Walking At-At,2010,18,1137
+10146-1,Pitts S-2B Special,2002,9,399
+10147-1,Duel On Mustafar,2005,18,158
+10148-1,Braille Bricks,2020,1,0
+10149-1,Slave I,2006,18,537
+10150-1,Racers,2002,67,1
+10151-1,Darth Vader Transformation,2006,18,313
+10152-1,City,2002,67,1
+10153-1,Hogwarts Express Motor Set,2004,45,8
+10154-1,Trash Compactor Monster,2006,18,225
+10155-1,Lego Brand Set,2005,67,1
+10156-1,Lego Brand Store,2012,67,0
+10157-1,Technic Race Buggy,2006,3,1
+10158-1,City Bus,2006,67,1
+10159-1,City Airport,2004,67,0
+10160-1,Coastal Police Station,2003,67,1
+10161-1,Stormtrooper,2005,18,356
+10162-1,City Garage,2006,67,0
+10163-1,Technic Super Car,2002,3,1281
+10164-1,City Hospital,2006,67,0
+10165-1,City Police,2006,67,1
+10166-1,City Fire,2006,67,1
+10167-1,City Train,2007,9,1
+10168-1,City Racing,2007,67,1
+10169-1,Harry Potter Hogwarts,2007,45,1
+10170-1,Ttx Intermodal Double-Stack Car,2006,9,287
+10171-1,Imperial Star Destroyer Collectors Set,2006,18,1
+10172-1,Boeing 787 Dreamliner,2006,9,1197
+10173-1,Holiday Train,2006,9,685
+10174-1,Imperial At-St,2006,18,422
+10175-1,Vader'S Tie Advanced,2006,18,1212
+10176-1,Mindstorms Expansion Set,2006,48,1
+10177-1,Boeing 787 Dreamliner,2007,9,1197
+10178-1,Motorized Walking At-At,2007,18,1137
+10179-1,Ultimate Collector'S Millennium Falcon,2007,18,5195
+10180-1,Technic Motorized Bulldozer,2007,3,1384
+10181-1,Eiffel Tower,2007,9,3428
+10182-1,Café Corner,2007,67,2056
+10183-1,Hobby Train,2007,9,694
+10184-1,Town Plan,2008,67,1498
+10185-1,Green Grocer,2008,67,2352
+10186-1,General Grievous,2008,18,1085
+10187-1,Volkswagen Beetle,2008,9,1626
+10188-1,Death Star,2008,18,3803
+10189-1,Taj Mahal,2008,9,5922
+10190-1,Market Street,2007,67,1248
+10191-1,Star Justice,2008,18,1
+10192-1,Space Skulls,2008,18,1
+10193-1,Medieval Market Village,2009,8,1601
+10194-1,Emerald Night,2009,9,1085
+10195-1,Republic Dropship With At-Ot Walker,2009,18,1759
+10196-1,Grand Carousel,2009,67,3263
+10197-1,Fire Brigade,2009,67,2231
+10198-1,Tantive Iv,2009,18,1408
+10199-1,Winter Village Toy Shop,2009,67,815
+10200-1,Custom Car Garage,2009,67,1
