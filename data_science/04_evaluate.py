@@ -26,6 +26,11 @@ with open("model.pkl", "rb") as f:
 X_test = pd.read_csv("X_test.csv")
 y_test = pd.read_csv("y_test.csv").squeeze()
 
+# --- Diagnostics ---
+print(f"X_test shape: {X_test.shape}")
+print(f"y_test shape: {y_test.shape}")
+print(f"y_test values: {y_test.values}")
+
 # --- Make predictions ---
 y_pred = model.predict(X_test)
 
