@@ -7,11 +7,16 @@ Welcome! Today you'll get a hands-on taste of two of the most exciting careers i
 
 ## Getting Started
 
-### 1. Open this repo in your browser
-Go to **https://vscode.dev** and open this repository.
+### 1. Open this repo in GitHub Codespaces
+- Go to **https://github.com/nicoldotyap/bricktastic_dataops_taster**
+- Click the green **Code** button
+- Click the **Codespaces** tab
+- Click **Create codespace on main**
+- Wait ~1 minute for VS Code to load in your browser
 
 ### 2. Install Python extension
-When prompted, install the **Python** extension. VS Code will recommend it automatically.
+- Click the **Extensions icon** in the left sidebar (four squares)
+- Search for **Python** and install the one by Microsoft
 
 ### 3. Install dependencies
 Open the terminal (`Ctrl + ~`) and run:
