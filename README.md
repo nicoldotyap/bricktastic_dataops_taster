@@ -1,7 +1,7 @@
 # Bricktastic DataOps Taster 🧱
 
 Welcome! Today you'll get a hands-on taste of two of the most exciting careers in tech:
-**Data Science** and **Data Engineering** — using som play data.
+**Data Science** and **Data Engineering** — using some LEGO data.
 
 ---
 
@@ -36,27 +36,7 @@ data_science/                  Forecasting model — 5 steps  ← run this secon
 
 ---
 
-## Track A — Data Science 📊
-
-Data scientists use data to make predictions. You'll build a forecasting model
-to predict how many LEGO sets will be released in future years.
-
-> **Important:** Run Track B (Data Engineering) first. The data science scripts
-> read the cleaned and enriched files produced by that pipeline.
-
-Run the scripts **in order**:
-
-| File | What you'll learn |
-|------|-------------------|
-| `01_explore.py` | Visualise the enriched dataset from data engineering |
-| `02_features.py` | Engineer features (lag, rolling average) |
-| `03_train_forecast.py` | Train a Linear Regression model |
-| `04_evaluate.py` | Measure model accuracy (MAE, R²) |
-| `05_challenge.py` | **Your turn** — forecast the next 5 years |
-
----
-
-## Track B — Data Engineering ⚙️
+## Track A — Data Engineering ⚙️
 
 Data engineers build the pipelines that make data usable. You'll build a
 pipeline that ingests, cleans, transforms, and aggregates LEGO data.
@@ -73,14 +53,34 @@ Run the scripts **in order**:
 
 ---
 
+## Track B — Data Science 📊
+
+Data scientists use data to make predictions. You'll build a forecasting model
+to predict how many LEGO sets will be released in future years.
+
+> **Important:** Run Track A (Data Engineering) first. The data science scripts
+> read the cleaned and enriched files produced by that pipeline.
+
+Run the scripts **in order**:
+
+| File | What you'll learn |
+|------|-------------------|
+| `01_explore.py` | Visualise the enriched dataset from data engineering |
+| `02_features.py` | Engineer features (lag, rolling average) |
+| `03_train_forecast.py` | Train a Linear Regression model |
+| `04_evaluate.py` | Measure model accuracy (MAE, R²) |
+| `05_challenge.py` | **Your turn** — forecast the next 5 years |
+
+---
+
 ## Suggested Day Schedule
 
 | Time | Activity |
 |------|----------|
 | 09:00 – 09:30 | Intro + setup (30 min) |
-| 09:30 – 11:00 | Track B: Data Engineering (90 min) |
+| 09:30 – 11:00 | Track A: Data Engineering (90 min) |
 | 11:00 – 11:15 | Break (15 min) |
-| 11:15 – 12:45 | Track A: Data Science (90 min) |
+| 11:15 – 12:45 | Track B: Data Science (90 min) |
 | 12:45 – 13:00 | Group debrief + Q&A (15 min) |
 
 **Time per step (each track):**
@@ -96,7 +96,7 @@ Steps 01–04 can run without the challenge if time is short. Step 05 is the ext
 
 ## What to Expect — Script by Script
 
-### Track B — Data Engineering
+### Track A — Data Engineering
 
 **`01_ingest.py` — Load Raw Data**
 You'll load three CSV files — LEGO sets, themes, and colors — using pandas. The script checks each table for basic quality issues: how many rows and columns it has, what data types each column uses, whether any values are missing, and whether any rows are duplicated. It prints a clear summary to the terminal and saves the raw tables as snapshots. Think of this as the data engineer's first look at the data before doing anything with it. You'll see how real-world data is rarely perfect straight out of the box.
@@ -115,7 +115,7 @@ This is your open-ended challenge. You'll bring in the colors data and explore h
 
 ---
 
-### Track A — Data Science
+### Track B — Data Science
 
 **`01_explore.py` — Explore the Engineered Data**
 Before building any model, data scientists study the data visually. This script loads the enriched dataset produced by the data engineering pipeline — so sets already have theme names, complexity tiers, decade labels, and era labels joined in. It prints basic statistics and produces four charts: sets released per year, average parts per set over time, top 10 themes, and complexity tier distribution. The charts are saved as PNG files you can open in VS Code. You'll see how much richer the engineered data is compared to raw CSVs.
@@ -130,7 +130,7 @@ This script trains a Linear Regression model to predict how many LEGO sets will 
 A model is only useful if you can measure how good it is. This script loads the saved model and test data, makes predictions, and calculates three metrics: MAE (how many sets off on average), RMSE (which penalises big errors more), and R² (how much of the variation the model explains). It also plots actual versus predicted values so you can see where the model performs well and where it struggles. You'll learn how data scientists decide whether a model is good enough to use and where it might need improvement.
 
 **`05_challenge.py` — Your Turn (Data Science)**
-Now you use the trained model to look into the future. Your task is to forecast how many LEGO sets will be released in the next five years. You'll load the model and historical features, build a new DataFrame for future years with estimated lag and rolling values, call `model.predict()`, and plot the historical data alongside your forecast with a dashed line separating past from future. `TODO` comments guide each step. It's the payoff of the whole track — turning everything you've built into an actual prediction.
+Now you use the trained model to look into the future. Your task is to forecast how many LEGO sets will be released in the next five years. You'll load the model and historical features, build a new DataFrame for future years with estimated lag and rolling values, call `model.predict()`, and plot the historical data alongside your forecast with a dashed line separating past from future. As a bonus, you can also load the decade summary from the data engineering pipeline to add extra context to your analysis. `TODO` comments guide each step.
 
 ---
 
