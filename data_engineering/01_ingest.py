@@ -11,9 +11,11 @@ This step covers:
 """
 
 import pandas as pd
+import os
 
-#RAW_DATA_PATH = "/workspaces/bricktastic_dataops_taster/data/"
-RAW_DATA_PATH = "insert your data here"
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+RAW_DATA_PATH = "../data/"
 
 def load_and_validate(filepath, name):
     print(f"\n{'='*50}")
