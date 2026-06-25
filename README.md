@@ -30,8 +30,8 @@ pip install -r requirements.txt
 
 ```
 data/                          Raw LEGO data (sets, themes, colors)
-data_science/                  Forecasting model — 5 steps
-data_engineering/              Data pipeline — 5 steps
+data_engineering/              Data pipeline — 5 steps  ← run this first
+data_science/                  Forecasting model — 5 steps  ← run this second
 ```
 
 ---
@@ -41,13 +41,16 @@ data_engineering/              Data pipeline — 5 steps
 Data scientists use data to make predictions. You'll build a forecasting model
 to predict how many LEGO sets will be released in future years.
 
+> **Important:** Run Track B (Data Engineering) first. The data science scripts
+> read the cleaned and enriched files produced by that pipeline.
+
 Run the scripts **in order**:
 
 | File | What you'll learn |
 |------|-------------------|
-| `01_explore.py` | Load and visualise the data |
+| `01_explore.py` | Visualise the enriched dataset from data engineering |
 | `02_features.py` | Engineer features (lag, rolling average) |
-| `03_train.py` | Train a Linear Regression model |
+| `03_train_forecast.py` | Train a Linear Regression model |
 | `04_evaluate.py` | Measure model accuracy (MAE, R²) |
 | `05_challenge.py` | **Your turn** — forecast the next 5 years |
 
@@ -75,9 +78,9 @@ Run the scripts **in order**:
 | Time | Activity |
 |------|----------|
 | 09:00 – 09:30 | Intro + setup (30 min) |
-| 09:30 – 11:00 | Track A: Data Science (90 min) |
+| 09:30 – 11:00 | Track B: Data Engineering (90 min) |
 | 11:00 – 11:15 | Break (15 min) |
-| 11:15 – 12:45 | Track B: Data Engineering (90 min) |
+| 11:15 – 12:45 | Track A: Data Science (90 min) |
 | 12:45 – 13:00 | Group debrief + Q&A (15 min) |
 
 **Time per step (each track):**
@@ -114,11 +117,11 @@ This is your open-ended challenge. You'll bring in the colors data and explore h
 
 ### Track A — Data Science
 
-**`01_explore.py` — Explore the Data**
-Before building any model, data scientists study the data visually. This script loads the LEGO sets and themes tables, prints basic statistics — shape, column types, missing values, year range — and then produces three charts: sets released per year, average parts per set over time, and the top 10 themes by number of sets. The charts are saved as PNG files you can open in VS Code. You'll get a feel for what the data looks like and start noticing trends before any modelling begins.
+**`01_explore.py` — Explore the Engineered Data**
+Before building any model, data scientists study the data visually. This script loads the enriched dataset produced by the data engineering pipeline — so sets already have theme names, complexity tiers, decade labels, and era labels joined in. It prints basic statistics and produces four charts: sets released per year, average parts per set over time, top 10 themes, and complexity tier distribution. The charts are saved as PNG files you can open in VS Code. You'll see how much richer the engineered data is compared to raw CSVs.
 
 **`02_features.py` — Feature Engineering**
-Models can't learn from raw numbers alone — they need meaningful signals. This script takes the yearly set counts and creates new features: lag values (how many sets were released last year and two years ago), rolling averages over three and five years to smooth out noise, and year-on-year growth percentage. These features give the model a sense of trend and momentum. A chart comparing actual counts versus rolling averages is saved. You'll understand why feature engineering is often where the most important data science work happens.
+Models can't learn from raw numbers alone — they need meaningful signals. This script reads the clean sets file from the data engineering pipeline and aggregates by year. It then creates new features: lag values (how many sets were released last year and two years ago), rolling averages over three and five years to smooth out noise, and year-on-year growth percentage. These features give the model a sense of trend and momentum. A chart comparing actual counts versus rolling averages is saved. You'll understand why feature engineering is often where the most important data science work happens.
 
 **`03_train_forecast.py` — Train a Forecasting Model**
 This script trains a Linear Regression model to predict how many LEGO sets will be released in a given year. It splits the data 80/20 into training and test sets, keeping time order intact so the model is always predicting forward. After training, it prints the coefficient for each feature — showing how much each one influences the prediction. The trained model is saved as a pickle file for use in the next step. You'll see how machine learning models are built, saved, and handed off in a real workflow.

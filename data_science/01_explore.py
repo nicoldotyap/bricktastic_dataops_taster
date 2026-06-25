@@ -1,35 +1,44 @@
 """
-STEP 1 — Explore the Data
-=========================
-Before building any model, data scientists always start by understanding the data.
-Run this file and look at the charts. What patterns do you notice?
+STEP 1 — Explore the Engineered Data
+======================================
+We start from the enriched dataset produced by the data engineering pipeline.
+This is richer than the raw data — sets already have theme names, complexity
+tiers, decade labels, and era labels joined in.
+
+This step covers:
+  - Loading the enriched dataset
+  - Visualising sets per year
+  - Exploring complexity and era distributions
+  - Top themes by number of sets
 """
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
-# --- Load data ---
-sets = pd.read_csv("../data/lego_sets.csv")
-themes = pd.read_csv("../data/lego_themes.csv")
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-print("Shape:", sets.shape)
+# --- Load enriched data from data engineering pipeline ---
+enriched = pd.read_csv("../data_engineering/enriched_sets.csv")
+
+print("Shape:", enriched.shape)
 print("\nFirst 5 rows:")
-print(sets.head())
+print(enriched.head())
 
 print("\nColumn types:")
-print(sets.dtypes)
+print(enriched.dtypes)
 
 print("\nMissing values:")
-print(sets.isnull().sum())
+print(enriched.isnull().sum())
 
-print("\nYear range:", sets["year"].min(), "to", sets["year"].max())
+print("\nYear range:", enriched["year"].min(), "to", enriched["year"].max())
 
 # --- Chart 1: How many LEGO sets were released each year? ---
-sets_per_year = sets.groupby("year").size().reset_index(name="count")
+sets_per_year = enriched.groupby("year").size().reset_index(name="count")
 
 plt.figure(figsize=(12, 5))
 plt.plot(sets_per_year["year"], sets_per_year["count"], color="red", linewidth=2)
-plt.title("LEGO Sets Released Per Year")
+plt.title("LEGO Sets Released Per Year (from engineered data)")
 plt.xlabel("Year")
 plt.ylabel("Number of Sets")
 plt.grid(True, alpha=0.3)
@@ -39,7 +48,7 @@ plt.show()
 print("Chart saved: chart_sets_per_year.png")
 
 # --- Chart 2: Average number of parts per set over time ---
-avg_parts = sets.groupby("year")["num_parts"].mean().reset_index()
+avg_parts = enriched.groupby("year")["num_parts"].mean().reset_index()
 
 plt.figure(figsize=(12, 5))
 plt.bar(avg_parts["year"], avg_parts["num_parts"], color="yellow", edgecolor="black", alpha=0.7)
@@ -53,8 +62,7 @@ plt.show()
 print("Chart saved: chart_avg_parts.png")
 
 # --- Chart 3: Top 10 themes by number of sets ---
-sets_with_themes = sets.merge(themes, on="theme_id", how="left")
-top_themes = sets_with_themes["name_y"].value_counts().head(10)
+top_themes = enriched["theme_name"].value_counts().head(10)
 
 plt.figure(figsize=(10, 5))
 top_themes.plot(kind="barh", color="steelblue")
@@ -65,5 +73,19 @@ plt.savefig("chart_top_themes.png")
 plt.show()
 print("Chart saved: chart_top_themes.png")
 
+# --- Chart 4: Complexity tier distribution (bonus — not in original track) ---
+complexity_counts = enriched["complexity"].value_counts()
+
+plt.figure(figsize=(8, 5))
+complexity_counts.plot(kind="bar", color="orange", edgecolor="black")
+plt.title("LEGO Sets by Complexity Tier")
+plt.xlabel("Complexity")
+plt.ylabel("Number of Sets")
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.savefig("chart_complexity.png")
+plt.show()
+print("Chart saved: chart_complexity.png")
+
 print("\n✅ Exploration complete! Check the charts above.")
-print("💡 Question: What year did LEGO release the most sets?")
+print("💡 Question: How does this data compare to exploring the raw CSV directly?")

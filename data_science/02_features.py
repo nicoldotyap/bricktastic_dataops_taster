@@ -1,38 +1,44 @@
 """
 STEP 2 — Feature Engineering
-=============================
-Raw data is rarely ready for a model. We need to create "features" —
-meaningful signals the model can learn from.
+==============================
+We build lag features and rolling averages from the yearly set counts,
+just like the original data science track — but using the clean, validated
+set data produced by the data engineering pipeline instead of raw CSVs.
 
-Here we build lag features and rolling averages from the yearly set counts.
-These help the model understand trends and momentum over time.
+This step covers:
+  - Aggregating enriched sets by year
+  - Lag features (last year's count, 2 years ago)
+  - Rolling averages (3-year and 5-year)
+  - Year-on-year growth percentage
 """
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
-# --- Load and aggregate ---
-sets = pd.read_csv("../data/lego_sets.csv")
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+# --- Load clean sets from data engineering pipeline ---
+sets = pd.read_csv("../data_engineering/clean_sets.csv")
+
 df = sets.groupby("year").size().reset_index(name="sets_count")
 df = df.sort_values("year").reset_index(drop=True)
 
-print("Yearly set counts:")
+print("Yearly set counts (from clean data):")
 print(df.head(10))
 
-# --- Feature 1: Lag features (last year's count, 2 years ago) ---
-# A lag feature tells the model what happened in previous years
-df["lag_1"] = df["sets_count"].shift(1)   # previous year
-df["lag_2"] = df["sets_count"].shift(2)   # 2 years ago
+# --- Feature 1: Lag features ---
+df["lag_1"] = df["sets_count"].shift(1)
+df["lag_2"] = df["sets_count"].shift(2)
 
-# --- Feature 2: Rolling average (smooth out noise) ---
-# Rolling average shows the general trend over a window of years
+# --- Feature 2: Rolling averages ---
 df["rolling_3yr_avg"] = df["sets_count"].rolling(window=3).mean()
 df["rolling_5yr_avg"] = df["sets_count"].rolling(window=5).mean()
 
 # --- Feature 3: Year-on-year growth ---
-df["yoy_growth"] = df["sets_count"].pct_change() * 100  # as percentage
+df["yoy_growth"] = df["sets_count"].pct_change() * 100
 
-# --- Drop rows with NaN (from lag/rolling) ---
+# --- Drop rows with NaN from lag/rolling ---
 df = df.dropna().reset_index(drop=True)
 
 print("\nFeature-engineered data:")
@@ -43,12 +49,12 @@ print(f"\nDataset shape after feature engineering: {df.shape}")
 df.to_csv("features.csv", index=False)
 print("\nFeatures saved to: features.csv")
 
-# --- Chart: Actual vs rolling average ---
+# --- Chart: Actual vs rolling averages ---
 plt.figure(figsize=(12, 5))
 plt.plot(df["year"], df["sets_count"], label="Actual", color="red", alpha=0.6)
 plt.plot(df["year"], df["rolling_3yr_avg"], label="3-Year Rolling Avg", color="blue", linewidth=2)
 plt.plot(df["year"], df["rolling_5yr_avg"], label="5-Year Rolling Avg", color="green", linewidth=2)
-plt.title("LEGO Sets Per Year — Actual vs Rolling Averages")
+plt.title("LEGO Sets Per Year — Actual vs Rolling Averages (clean data)")
 plt.xlabel("Year")
 plt.ylabel("Number of Sets")
 plt.legend()
