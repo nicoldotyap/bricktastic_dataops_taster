@@ -11,6 +11,9 @@ This step covers:
 """
 
 import pandas as pd
+import os
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # --- Load raw snapshots from step 1 ---
 sets   = pd.read_csv("raw_sets.csv")

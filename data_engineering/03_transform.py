@@ -12,6 +12,9 @@ This step covers:
 """
 
 import pandas as pd
+import os
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # --- Load cleaned data ---
 sets   = pd.read_csv("clean_sets.csv")

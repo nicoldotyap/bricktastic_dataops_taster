@@ -11,6 +11,9 @@ This step covers:
 """
 
 import pandas as pd
+import os
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # --- Load enriched data ---
 df = pd.read_csv("enriched_sets.csv")
