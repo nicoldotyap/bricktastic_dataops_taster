@@ -91,6 +91,46 @@ Steps 01–04 can run without the challenge if time is short. Step 05 is the ext
 
 ---
 
+## What to Expect — Script by Script
+
+### Track B — Data Engineering
+
+**`01_ingest.py` — Load Raw Data**
+You'll load three CSV files — LEGO sets, themes, and colors — using pandas. The script checks each table for basic quality issues: how many rows and columns it has, what data types each column uses, whether any values are missing, and whether any rows are duplicated. It prints a clear summary to the terminal and saves the raw tables as snapshots. Think of this as the data engineer's first look at the data before doing anything with it. You'll see how real-world data is rarely perfect straight out of the box.
+
+**`02_clean.py` — Clean the Data**
+Raw data is messy. This script tidies it up before it can be used. It standardises column names, removes sets with invalid or missing years, fills in unknown part counts with zero, and converts data types so everything is consistent. It does the same for themes and colors — trimming whitespace, fixing capitalisation, and standardising boolean values. Cleaned versions of all three tables are saved as new files. You'll learn why data engineers never overwrite raw data and always save a clean copy separately.
+
+**`03_transform.py` — Transform the Data**
+This is where the data gets enriched and made useful for analysis. The script joins the sets table with the themes table so each set shows its theme name. It then adds three new columns: a decade label (e.g. "1980s"), a complexity tier based on part count (Simple / Standard / Advanced / Expert), and an era label (e.g. "Golden Age"). You'll see how joining tables and adding derived columns turns flat data into something much more informative and ready for reporting.
+
+**`04_aggregate.py` — Aggregate and Summarise**
+The final pipeline step produces summary tables that answer real business questions. The script groups data by decade to show how set counts and part numbers changed over time, finds the top three themes in each decade, breaks down complexity tiers per decade, and summarises each era by average parts and percentage of expert-level sets. Four output CSV files are saved. This is what analysts and stakeholders actually use — not the raw rows, but the summaries built on top of them.
+
+**`05_challenge.py` — Your Turn (Data Engineering)**
+This is your open-ended challenge. You'll bring in the colors data and explore how transparent versus non-transparent LEGO colors are distributed. There are `TODO` comments guiding you: load the data, count transparency types, group colors into families (e.g. "Trans", "Dark", "Bright"), and create a chart of your findings. There's no single right answer — the goal is to practise building your own pipeline step from scratch using what you've learned in steps 1 to 4.
+
+---
+
+### Track A — Data Science
+
+**`01_explore.py` — Explore the Data**
+Before building any model, data scientists study the data visually. This script loads the LEGO sets and themes tables, prints basic statistics — shape, column types, missing values, year range — and then produces three charts: sets released per year, average parts per set over time, and the top 10 themes by number of sets. The charts are saved as PNG files you can open in VS Code. You'll get a feel for what the data looks like and start noticing trends before any modelling begins.
+
+**`02_features.py` — Feature Engineering**
+Models can't learn from raw numbers alone — they need meaningful signals. This script takes the yearly set counts and creates new features: lag values (how many sets were released last year and two years ago), rolling averages over three and five years to smooth out noise, and year-on-year growth percentage. These features give the model a sense of trend and momentum. A chart comparing actual counts versus rolling averages is saved. You'll understand why feature engineering is often where the most important data science work happens.
+
+**`03_train_forecast.py` — Train a Forecasting Model**
+This script trains a Linear Regression model to predict how many LEGO sets will be released in a given year. It splits the data 80/20 into training and test sets, keeping time order intact so the model is always predicting forward. After training, it prints the coefficient for each feature — showing how much each one influences the prediction. The trained model is saved as a pickle file for use in the next step. You'll see how machine learning models are built, saved, and handed off in a real workflow.
+
+**`04_evaluate.py` — Evaluate the Model**
+A model is only useful if you can measure how good it is. This script loads the saved model and test data, makes predictions, and calculates three metrics: MAE (how many sets off on average), RMSE (which penalises big errors more), and R² (how much of the variation the model explains). It also plots actual versus predicted values so you can see where the model performs well and where it struggles. You'll learn how data scientists decide whether a model is good enough to use and where it might need improvement.
+
+**`05_challenge.py` — Your Turn (Data Science)**
+Now you use the trained model to look into the future. Your task is to forecast how many LEGO sets will be released in the next five years. You'll load the model and historical features, build a new DataFrame for future years with estimated lag and rolling values, call `model.predict()`, and plot the historical data alongside your forecast with a dashed line separating past from future. `TODO` comments guide each step. It's the payoff of the whole track — turning everything you've built into an actual prediction.
+
+---
+
 ## Tips
 
 - Each script has a **💡 Question** at the end — discuss with the group!
